@@ -9,7 +9,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "25 MPG City / 34 MPG Highway",
-    image: require("../assets/cars/toyota-camry.png"), // Add require()
+    image: require("../assets/cars/toyota-camry.webp"),
     description:
       "The Toyota Camry is a comfortable and reliable midsize sedan...",
   },
@@ -23,7 +23,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "32 MPG City / 42 MPG Highway",
-    image: require("../assets/cars/Honda Civic 2023.png"),
+    image: require("../assets/cars/Honda Civic 2023.webp"),
     description:
       "The Honda Civic offers a sporty design with impressive fuel efficiency.",
   },
@@ -37,7 +37,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "90 MPGe",
-    image: require("../assets/cars/Ford Mustang Mach-E.jpeg"),
+    image: require("../assets/cars/Ford Mustang Mach-E.webp"),
     description: "An all-electric SUV with Mustang styling and performance.",
   },
   {
@@ -50,7 +50,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "132 MPGe",
-    image: require("../assets/cars/Tesla Model 3.jpeg"),
+    image: require("../assets/cars/Tesla Model 3.webp"),
     description:
       "Premium electric sedan with cutting-edge technology and performance.",
   },
@@ -64,7 +64,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "38 MPG Combined",
-    image: require("../assets/cars/Hyundai Tucson.jpeg"),
+    image: require("../assets/cars/Hyundai Tucson.webp"),
     description: "Stylish and efficient compact SUV with hybrid option.",
   },
   {
@@ -77,7 +77,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "26 MPG City / 36 MPG Highway",
-    image: require("../assets/cars/BMW 3 Series.jpeg"),
+    image: require("../assets/cars/BMW 3 Series.webp"),
     description:
       "Luxury sports sedan with excellent handling and premium features.",
   },
@@ -91,7 +91,7 @@ export const mockCars = [
     seatingCapacity: 8,
     transmission: "Automatic",
     mileage: "21 MPG City / 28 MPG Highway",
-    image: require("../assets/cars/Chevrolet Tahoe.jpeg"),
+    image: require("../assets/cars/Chevrolet Tahoe.webp"),
     description:
       "Full-size SUV with powerful engine options and spacious interior.",
   },
@@ -105,7 +105,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "26 MPG City / 32 MPG Highway",
-    image: require("../assets/cars/Subaru Outback.jpeg"),
+    image: require("../assets/cars/Subaru Outback.webp"),
     description:
       "Rugged wagon with standard all-wheel drive and great ground clearance.",
   },
@@ -119,7 +119,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "107 MPGe",
-    image: require("../assets/cars/Volkswagen ID.4.jpeg"),
+    image: require("../assets/cars/Volkswagen ID.4.webp"),
     description:
       "Electric SUV with spacious interior and smooth driving experience.",
   },
@@ -133,7 +133,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Manual",
     mileage: "22 MPG City / 29 MPG Highway",
-    image: require("../assets/cars/Jeep Wrangler.jpeg"),
+    image: require("../assets/cars/Jeep Wrangler.webp"),
     description: "Iconic off-road vehicle with removable doors and roof.",
   },
   {
@@ -146,7 +146,7 @@ export const mockCars = [
     seatingCapacity: 7,
     transmission: "Automatic",
     mileage: "39 MPG Combined",
-    image: require("../assets/cars/Kia Sorento.jpeg"),
+    image: require("../assets/cars/Kia Sorento.webp"),
     description: "Three-row SUV with hybrid option and upscale interior.",
   },
   {
@@ -159,7 +159,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "24 MPG City / 32 MPG Highway",
-    image: require("../assets/cars/Mercedes-Benz E-Class.jpeg"),
+    image: require("../assets/cars/Mercedes-Benz E-Class.webp"),
     description: "Luxury sedan with advanced technology and refined ride.",
   },
   {
@@ -172,7 +172,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "30 MPG City / 37 MPG Highway",
-    image: require("../assets/cars/Nissan Rogue.jpeg"),
+    image: require("../assets/cars/Nissan Rogue.webp"),
     description: "Compact SUV with comfortable ride and good fuel economy.",
   },
   {
@@ -185,7 +185,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "23 MPG City / 29 MPG Highway",
-    image: require("../assets/cars/Audi Q5.jpeg"),
+    image: require("../assets/cars/Audi Q5.webp"),
     description: "Luxury compact SUV with premium interior and tech features.",
   },
   {
@@ -198,7 +198,7 @@ export const mockCars = [
     seatingCapacity: 5,
     transmission: "Automatic",
     mileage: "31 MPG Combined",
-    image: require("../assets/cars/Lexus RX.jpeg"),
+    image: require("../assets/cars/Lexus RX.webp"),
     description: "Luxury SUV with hybrid option and quiet, comfortable ride.",
   },
 ];
