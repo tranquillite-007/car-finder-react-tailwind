@@ -42,13 +42,12 @@ const Home = () => {
 
     const timer = setTimeout(() => {
       getCars();
-      setCurrentPage(1); // Reset to first page when filters change
+      setCurrentPage(1);
     }, 500);
 
     return () => clearTimeout(timer);
   }, [filters, searchQuery]);
 
-  // Pagination logic
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);

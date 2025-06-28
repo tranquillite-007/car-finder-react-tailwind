@@ -23,7 +23,6 @@ const WishlistButton = ({ car }) => {
 
     setIsInWishlist(!isInWishlist);
 
-    // Dispatch storage event to update other components
     window.dispatchEvent(new Event("storage"));
   };
 

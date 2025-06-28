@@ -204,12 +204,11 @@ export const mockCars = [
 ];
 
 export const fetchMockCars = async (params = {}) => {
-  // Simulate network delay
   await new Promise((resolve) => setTimeout(resolve, 500));
 
   let filteredCars = [...mockCars];
 
-  // Apply filters
+  // filter code for cars
   if (params.brand) {
     filteredCars = filteredCars.filter((car) =>
       car.brand.toLowerCase().includes(params.brand.toLowerCase())
@@ -251,7 +250,7 @@ export const fetchMockCars = async (params = {}) => {
     );
   }
 
-  // Sorting
+  // Sorting car based on there price low and high
   if (params.sort) {
     if (params.sort === "price-asc") {
       filteredCars.sort((a, b) => a.price - b.price);
