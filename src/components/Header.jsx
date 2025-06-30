@@ -35,7 +35,6 @@ const Header = () => {
     <header className="bg-white dark:bg-[#0B192C] border-b border-gray-100 dark:border-[#1E3E62]">
       <div className="container mx-auto px-4 py-3 sm:px-6 sm:py-4">
         <div className="flex items-center justify-between">
-          {/* Mobile menu button */}
           <button
             className="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-[#1E3E62]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -44,10 +43,9 @@ const Header = () => {
             <Bars3Icon className="h-6 w-6" />
           </button>
 
-          {/* Logo - Center on mobile */}
           <Link
             to="/"
-            className="flex flex-col items-center mx-auto lg:mx-4 group"
+            className="flex flex-col items-center mx-auto lg:mx-0 lg:mr-4 group"
           >
             <svg
               className="w-8 h-8 text-gray-900 dark:text-gray-100 group-hover:rotate-12 transition-transform duration-300"
@@ -96,7 +94,6 @@ const Header = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation (hidden on mobile) */}
           <nav className="hidden lg:flex items-center space-x-6">
             <Link
               to="/"
@@ -128,14 +125,16 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Right side icons (always visible) */}
           <div className="flex items-center space-x-4 lg:space-x-6">
             <Link
               to="/wishlist"
-              className="flex items-center text-gray-800 dark:text-gray-200 group lg:hidden" // Hidden on desktop if you want
+              className="flex items-center text-gray-800 dark:text-gray-200 group"
               aria-label="Wishlist"
             >
               <HeartIcon className="w-6 h-6 group-hover:text-[#1E3E62] dark:group-hover:text-[#FF6500] transition-colors duration-300" />
+              <span className="ml-2 font-medium text-sm hidden lg:inline">
+                WISHLIST
+              </span>
             </Link>
 
             <button
@@ -154,7 +153,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile menu (shown when toggled) */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white dark:bg-[#0B192C] py-4 px-4 border-t border-gray-100 dark:border-[#1E3E62]">
             <nav className="flex flex-col space-y-4">
