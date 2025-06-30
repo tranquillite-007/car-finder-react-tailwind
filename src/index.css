@@ -4,10 +4,71 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors;
+    @apply bg-[#1E3E62] dark:bg-[#FF6500] text-white px-4 py-2 rounded-md hover:bg-[#0B192C] dark:hover:bg-[#F96E2A] transition-colors duration-300;
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden;
+    @apply bg-white dark:bg-[#0B192C] rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-[#1E3E62];
+  }
+}
+
+@layer utilities {
+  /* Marquee Container */
+  .marquee-container {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    );
+  }
+
+  /* Text Stroke Effect */
+  .stroke-text {
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: currentColor;
+    text-stroke: 1px;
+    text-stroke-color: currentColor;
+    color: transparent;
+  }
+
+  .dark .stroke-text {
+    -webkit-text-stroke-color: theme("colors.gray.200");
+    text-stroke-color: theme("colors.gray.200");
+  }
+
+  .light .stroke-text {
+    -webkit-text-stroke-color: theme("colors.gray.800");
+    text-stroke-color: theme("colors.gray.800");
+  }
+
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+    display: inline-block;
+    will-change: transform;
+  }
+
+  .pause-marquee:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  /* Enhanced Brand Styles */
+  .brand-text {
+    @apply mx-6 text-2xl font-bold tracking-wider stroke-text;
+  }
+
+  .brand-star {
+    @apply text-2xl text-yellow-500 mx-2;
   }
 }

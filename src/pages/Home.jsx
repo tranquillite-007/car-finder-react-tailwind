@@ -4,6 +4,8 @@ import SearchBar from "../components/SearchBar";
 import FilterSection from "../components/FilterSection";
 import CarCard from "../components/CarCard";
 import Pagination from "../components/Pagination";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [cars, setCars] = useState([]);
@@ -54,43 +56,71 @@ const Home = () => {
   const totalPages = Math.ceil(cars.length / carsPerPage);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 dark:text-white">
-        Find Your Dream Car
-      </h1>
+    <div className="flex flex-col min-h-screen bg-[#FBF8EF] dark:bg-[#0A1625]">
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 py-8">
+          <SearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
 
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <FilterSection filters={filters} setFilters={setFilters} />
+          {!searchQuery && <Hero />}
 
-      {loading ? (
-        <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        </div>
-      ) : error ? (
-        <div
-          className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-          role="alert"
-        >
-          <strong className="font-bold">Error! </strong>
-          <span className="block sm:inline">{error}</span>
-        </div>
-      ) : (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-            {currentCars.map((car) => (
-              <CarCard key={car.id} car={car} />
-            ))}
+          <div className="flex flex-col lg:flex-row gap-8 mt-8">
+            {!searchQuery && (
+              <div className="lg:w-1/4">
+                <FilterSection filters={filters} setFilters={setFilters} />
+              </div>
+            )}
+
+            <div className={searchQuery ? "lg:w-full" : "lg:w-3/4"}>
+              {loading ? (
+                <div className="flex justify-center items-center h-64">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#F96E2A] dark:border-[#FF6500]"></div>
+                </div>
+              ) : error ? (
+                <div
+                  className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl"
+                  role="alert"
+                >
+                  <strong className="font-bold">Error! </strong>
+                  <span className="block sm:inline">{error}</span>
+                </div>
+              ) : (
+                <>
+                  <h2 className="text-2xl font-bold text-[#1E3E62] dark:text-white mb-6">
+                    {searchQuery
+                      ? `Search Results for "${searchQuery}" (${cars.length} ${
+                          cars.length === 1 ? "match" : "matches"
+                        })`
+                      : `${cars.length} ${
+                          cars.length === 1 ? "Car" : "Cars"
+                        } Available`}
+                  </h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {currentCars.map((car) => (
+                      <CarCard key={car.id} car={car} />
+                    ))}
+                  </div>
+
+                  {totalPages > 1 && (
+                    <div className="mt-8">
+                      <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={setCurrentPage}
+                      />
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
           </div>
+        </div>
+      </main>
 
-          {totalPages > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          )}
-        </>
-      )}
+      <Footer />
     </div>
   );
 };
