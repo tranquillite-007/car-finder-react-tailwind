@@ -13,7 +13,6 @@
 }
 
 @layer utilities {
-  /* Marquee Container */
   .marquee-container {
     mask-image: linear-gradient(
       to right,
@@ -22,28 +21,16 @@
       black 80%,
       transparent 100%
     );
+    @apply bg-gray-100 dark:bg-[#0B192C];
   }
 
-  /* Text Stroke Effect */
   .stroke-text {
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: currentColor;
-    text-stroke: 1px;
-    text-stroke-color: currentColor;
-    color: transparent;
+    color: #1e3e62;
+    -webkit-text-stroke: 1px #1e3e62;
+    text-stroke: 1px #1e3e62;
+    @apply dark:text-gray-200 dark:stroke-gray-200;
   }
 
-  .dark .stroke-text {
-    -webkit-text-stroke-color: theme("colors.gray.200");
-    text-stroke-color: theme("colors.gray.200");
-  }
-
-  .light .stroke-text {
-    -webkit-text-stroke-color: theme("colors.gray.800");
-    text-stroke-color: theme("colors.gray.800");
-  }
-
-  /* Marquee Animation */
   @keyframes marquee {
     0% {
       transform: translateX(0);
@@ -63,7 +50,6 @@
     animation-play-state: paused;
   }
 
-  /* Enhanced Brand Styles */
   .brand-text {
     @apply mx-6 text-2xl font-bold tracking-wider stroke-text;
   }

@@ -1,13 +1,14 @@
 import carImage from "../assets/cars/Ford Mustang Mach-E.webp";
+import BrandMarquee from "./BrandMarquee";
 
 const Hero = () => {
   return (
     <div className="relative min-h-[80vh] overflow-hidden">
-      <div className="absolute inset-0 bg-[#FBF8EF] dark:bg-[#0B192C] z-0" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#78B3CE] to-[#C9E6F0] dark:from-[#000000] dark:to-[#0B192C] z-10" />
+      <div className="absolute inset-0 bg-[#FBF8EF] dark:bg-[#0B1925] z-0" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#78B3CE] to-[#C9E6F0] dark:from-[#000000] dark:to-[#0B1925] z-10" />
 
-      <div className="container mx-auto px-6 py-24 relative z-20">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="container mx-auto px-6 py-24 relative z-20 h-full">
+        <div className="flex flex-col lg:flex-row items-center gap-12 h-full">
           <div className="lg:w-1/2 space-y-8">
             <div className="inline-block px-4 py-2 bg-[#F96E2A]/10 rounded-full">
               <p className="text-sm font-medium text-[#F96E2A]">New Arrival</p>
@@ -90,6 +91,9 @@ const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="absolute left-6 bottom-6 w-[calc(50%-3rem)] z-30">
+          <BrandMarquee />
         </div>
       </div>
     </div>
