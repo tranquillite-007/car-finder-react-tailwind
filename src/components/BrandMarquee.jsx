@@ -19,28 +19,17 @@ const BrandMarquee = () => {
     "Lexus",
   ];
 
+  const duplicatedBrands = [...brands, ...brands];
+
   return (
-    <div className="overflow-hidden bg-transparent py-4">
-      <div className="animate-marquee whitespace-nowrap">
-        {brands.map((brand, index) => (
-          <React.Fragment key={brand}>
-            <span className="mx-6 text-2xl font-bold tracking-wider text-transparent stroke-text">
+    <div className="marquee-container marquee-fullwidth">
+      <div className="animate-marquee">
+        {duplicatedBrands.map((brand, index) => (
+          <React.Fragment key={`${brand}-${index}`}>
+            <span className="mx-4 text-xl md:text-2xl font-bold tracking-wider stroke-text">
               {brand}
             </span>
-            {index < brands.length - 1 && (
-              <span className="text-2xl text-yellow-500 mx-2">★</span>
-            )}
-          </React.Fragment>
-        ))}
-        {/* Duplicate for seamless looping */}
-        {brands.map((brand, index) => (
-          <React.Fragment key={`${brand}-2`}>
-            <span className="mx-6 text-2xl font-bold tracking-wider text-transparent stroke-text">
-              {brand}
-            </span>
-            {index < brands.length - 1 && (
-              <span className="text-2xl text-yellow-500 mx-2">★</span>
-            )}
+            <span className="text-xl md:text-2xl text-[#F96E2A] mx-1">•</span>
           </React.Fragment>
         ))}
       </div>

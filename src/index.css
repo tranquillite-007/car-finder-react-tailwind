@@ -13,22 +13,11 @@
 }
 
 @layer utilities {
-  .marquee-container {
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 20%,
-      black 80%,
-      transparent 100%
-    );
-    @apply bg-gray-100 dark:bg-[#0B192C];
-  }
-
-  .stroke-text {
-    color: #1e3e62;
-    -webkit-text-stroke: 1px #1e3e62;
-    text-stroke: 1px #1e3e62;
-    @apply dark:text-gray-200 dark:stroke-gray-200;
+  .marquee-fullwidth {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    @apply relative;
   }
 
   @keyframes marquee {
@@ -41,20 +30,17 @@
   }
 
   .animate-marquee {
-    animation: marquee 40s linear infinite;
+    animation: marquee 30s linear infinite;
     display: inline-block;
+    white-space: nowrap;
     will-change: transform;
   }
 
-  .pause-marquee:hover .animate-marquee {
-    animation-play-state: paused;
-  }
-
-  .brand-text {
-    @apply mx-6 text-2xl font-bold tracking-wider stroke-text;
-  }
-
-  .brand-star {
-    @apply text-2xl text-yellow-500 mx-2;
+  /* Text Stroke Effect */
+  .stroke-text {
+    color: transparent;
+    -webkit-text-stroke: 1px #1e3e62;
+    text-stroke: 1px #1e3e62;
+    @apply dark:text-transparent dark:[text-stroke-color:#e5e7eb] dark:[-webkit-text-stroke-color:#e5e7eb];
   }
 }

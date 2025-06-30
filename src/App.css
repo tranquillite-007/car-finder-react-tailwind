@@ -1,38 +1,27 @@
+/* Reset and base styles */
+body {
+  @apply m-0 font-sans antialiased;
+}
+
+/* App-specific styles */
 .App {
-  text-align: center;
+  @apply min-h-screen flex flex-col;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.marquee-container {
+  @apply w-full overflow-hidden py-3 bg-white/20 dark:bg-[#0B1925]/20 backdrop-blur-sm;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Animation for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
   }
 }
