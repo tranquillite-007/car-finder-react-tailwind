@@ -84,3 +84,17 @@ npm run build
 - **Routing**: React Router v6
 - **State Management**: React Hooks
 - **Build Tool**: Create React App
+
+## 🖼️ Screenshots
+
+<div align="center">
+  <h3>Light and Dark Mode Interface</h3>
+  <img src="./screenshots/light-mode.png" alt="Light Mode" width="45%"/>
+  <img src="./screenshots/dark-mode.png" alt="Dark Mode" width="45%"/>
+  
+  <h3>Key Features</h3>
+  <img src="./screenshots/search-filter-l.png" alt="search-filter-l" width="30%"/>
+  <img src="./screenshots/search-filter-d.png" alt="search-filter-d" width="30%"/>
+  <img src="./screenshots/car-detail-l.png" alt="car-detail-l" width="30%"/>
+  <img src="./screenshots/car-detail-d.png" alt="car-detail-d" width="30%"/>
+</div>
